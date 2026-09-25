@@ -1,4 +1,158 @@
-.completed span {
+/* Variables (mismas que el portfolio) */
+:root {
+  --bg-primary: #ded3ee;
+  --bg-secondary: #eee7f8;
+  --text-primary: #4a4458;
+  --text-secondary: #9691a8;
+  --accent: #a78bda;
+  --accent-dark: #8968c9;
+  --accent-secondary: #8fd9c4;
+  --border: #e6ddf5;
+
+  --font-sans: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  padding: var(--space-md);
+}
+
+.app {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: var(--space-md);
+}
+
+/* Formulario */
+#task-form {
+  display: flex;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+#task-input {
+  flex: 1;
+  min-width: 200px;
+  padding: var(--space-xs);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+#task-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+#task-category {
+  padding: var(--space-xs);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+}
+
+#task-form button {
+  padding: var(--space-xs) var(--space-md);
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#task-form button:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* Filtros */
+.filters {
+  display: flex;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.filter-btn {
+  padding: 0.4rem 0.8rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  border-color: var(--accent-dark);
+  color: var(--accent-dark);
+  background: var(--bg-secondary);
+}
+
+/* Lista de tareas */
+#task-list {
+  list-style: none;
+}
+
+#task-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-xs);
+}
+
+#task-list li.completed {
+  border-color: var(--accent-secondary);
+  background: #f4fbf9;
+}
+
+#task-list li.completed span {
   text-decoration: line-through;
-  color: gray;
+  color: var(--text-secondary);
+}
+
+.delete-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.delete-btn:hover {
+  border-color: #ff5c5c;
+  color: #ff5c5c;
 }
